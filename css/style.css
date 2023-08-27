@@ -1,0 +1,151 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body p {
+  font-size: 14px;
+}
+html {
+  font-family: "Fraunces", serif;
+  font-family: "Montserrat", sans-serif;
+}
+:root {
+  /*start colors */
+  --primary-Dark-cyan: hsl(158, 36%, 37%);
+  --primary-Cream: hsl(30, 38%, 92%);
+  --neutral-Very-dark-blue: hsl(212, 21%, 14%);
+  --neutral-Dark-grayish-blue: hsl(228, 12%, 48%);
+  --neutral-White: hsl(0, 0%, 100%);
+  /* font */
+  --family-montserrat: "montserrat", sans-serif;
+  --family-montserrat-fr: "fraunces", serif;
+  --wt-500: 500;
+  --wt-700: 700;
+  --fr-wt-700: 700;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 30px 20px;
+  background-color: var(--primary-Cream);
+}
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  background-color: var(--neutral-White);
+  border-radius: 10px;
+  box-shadow: 0 0 15px 0px #00000043;
+  max-width: 830px;
+}
+.mobile-image {
+  display: none;
+}
+.img {
+  max-height: 100%;
+  position: relative;
+  transition: all 0.3s;
+}
+.img::before {
+  content: "View";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(0, 0%, 0%, 40%);
+  border-radius: 10px 0 0 10px;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  font-family: var(--family-montserrat-fr);
+  letter-spacing: 3px;
+  visibility: hidden;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.img:hover::before {
+  visibility: visible;
+}
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+@media (max-width: 760px) {
+  .card {
+    max-width: 100%;
+  }
+  .mobile-image {
+    display: block;
+    border-radius: 10px 10px 0 0;
+  }
+  .desktop-image {
+    display: none;
+  }
+}
+.card-description {
+  padding: 40px 35px;
+}
+.type-of-product {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin-bottom: 20px;
+  color: var(--neutral-Dark-grayish-blue);
+}
+.card-description h1 {
+  font-size: 40px;
+  width: 70%;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-family: var(--family-montserrat-fr);
+  line-height: 1;
+}
+.product-description {
+  font-size: 22px;
+  margin-bottom: 40px;
+  line-height: 1.5;
+  color: var(--neutral-Dark-grayish-blue);
+}
+.promo-price {
+  font-size: 40px;
+  font-family: var(--family-montserrat-fr);
+  color: var(--primary-Dark-cyan);
+  margin-right: 10px;
+}
+.original-price {
+  transform: translateY(-6px);
+  display: inline-block;
+  color: var(--neutral-Dark-grayish-blue);
+  font-size: 17px;
+  text-decoration: line-through;
+}
+button {
+  width: 100%;
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-family: "Montserrat";
+  color: var(--neutral-White);
+  background-color: var(--primary-Dark-cyan);
+  border: none;
+  border-radius: 10px;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+button svg {
+  margin-right: 5px;
+}
+button:hover {
+  background-color: hsl(156, 42%, 18%, 95%);
+}
+button:active {
+  background-color: hsl(156, 42%, 18%);
+}
